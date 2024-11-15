@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Order Progress Bar</title>
+</head>
+<body>
+<div class="container">
+    <div class="toch">
+        <div class="progress-container">
+            <div class="step completed">
+                <div class="circle">✓</div>
+                <div>Shipping</div>
+            </div>
+            <div class="line active"></div>
+            <div class="step active">
+                <div class="circle">2</div>
+                <div>Payment</div>
+            </div>
+            <div class="line"></div>
+            <div class="step">
+                <div class="circle">3</div>
+                <div>Confirmation</div>
+            </div>
+        </div>
+    </div>
+     <div class="center">
+        <h2>Payment Details</h2>
+        <div class="linetext"></div>
+        <h3>Credit Card Information</h3>
+
+        <form class="myForm">
+            <!-- Имя на карте -->
+            <div class="form-group">
+                <label for="namecard">Name on Card</label>
+                <input type="text" id="namecard" name="namecard" required>
+            </div>
+            
+            
+            <!-- Номер карты и поддерживаемые карты -->
+            <div class="typecard">
+                <div class="n1">
+            <div class="form-group">
+                <label for="cardnumber">Number Card</label>
+                <input type="text" id="cardnumber" name="cardnumber" placeholder="____-____-____-____" required>
+                </div>
+            </div>
+             <div class="n2">
+                <div class="name2"><label>Accepted Cards</label></div>
+                <div class="photocard">
+                    <img class="vidcart" src="Visa.jfif" >
+                    <img class="vidcart" src="Mastercard.png">
+                    <img class="vidcart" src="Amel.jfif">
+                </div>
+            </div>
+            </div>
+
+            <!-- Поля CVV и даты истечения срока действия -->
+            <div class="CVVandDate">
+                <div class="form-group">
+                    <label for="securitycode">Security Code</label>
+                    <input type="text" id="securitycode" name="securitycode" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="month">Expiration </label>
+                    <select id="month" name="month" required>
+                        <option value="">Month</option>
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="year"> data</label>
+                    <select id="year" name="year" required>
+                        <option value="">Year</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                    </select>
+                </div>
+            </div>
+
+            <h3>Billing Information</h3>
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="billingAddress">Billing Address</label>
+                <input type="text" id="billingAddress" name="billingAddress" required>
+            </div>
+
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" required>
+            </div>
+            <div class="country">
+            <div class="poruch">
+                <div class="form-gr1">
+                    <div class="zip">
+                    <label for="zip">Zip</label>
+                    <input type="text" id="zip" name="zip" required>
+                </div>
+            </div>
+                <div class="form-gr2">
+                    <label for="country">Country</label>
+                    <input type="text" id="country" name="country" required>
+                </div>
+            </div>
+
+            <div class="button">
+                <button type="submit" class="submit"><h4>Submit Payment<h4></button>
+                </div>
+        </form>
+     </div>
+         <script>
+
+    function validateForm() {
+        const firstName = document.getElementById("firstName").value;
+        const lastName = document.getElementById("lastName").value;
+        const cardnumber = document.getElementById("cardnumber").value;
+        const zip = document.getElementById("zip").value;
+        const securitycode = document.getElementById("securitycode").value;
+
+        const nameRegex = /^[А-Яа-яЇїІіЄєҐґA-Za-z\s]{2,50}$/;
+        const cardRegex = /^\d{4}-\d{4}-\d{4}-\d{4}$/;
+        const zipRegex = /^\d{5}$/;
+        const cvcRegex = /^\d{3}$/;
+
+        if (!nameRegex.test(firstName)) {
+            alert("Введіть коректне прізвище (лише українські літери, англійські літери та пробіли).");
+            return false;
+        }
+        if (!nameRegex.test(lastName)) {
+            alert("Введіть коректне ім'я (лише українські літери, англійські літери та пробіли).");
+            return false;
+        }
+        if (!cardRegex.test(cardnumber)) {
+            alert("Введіть номер картки у форматі XXXX-XXXX-XXXX-XXXX.");
+            return false;
+        }
+        if (!zipRegex.test(zip)) {
+            alert("Введіть коректний поштовий індекс (5 цифр).");
+            return false;
+        }
+        if (!cvcRegex.test(securitycode)) {
+            alert("Введіть коректний CVC код (3 цифри).");
+            return false;
+        }
+        return true;
+    }
+    document.querySelector("form").onsubmit = function(event) {
+        if (!validateForm()) {
+            event.preventDefault();
+        }
+    };
+    
+     document.querySelector("form").onsubmit = function(event) {
+            event.preventDefault();
+            if (validateForm()) {
+                const xhr = new XMLHttpRequest();
+                xhr.open("POST", "process_form.php", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        document.body.innerHTML = xhr.responseText;
+                    }
+                };
+
+                const formData = new FormData(document.querySelector("form"));
+                const params = new URLSearchParams(formData).toString();
+                xhr.send(params);
+            }
+        };
+
+</script>
+</body>
+</html>

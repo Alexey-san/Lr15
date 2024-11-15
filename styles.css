@@ -1,0 +1,188 @@
+body {
+    align-items: center;
+    justify-content: center;
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+ }
+ .container {
+    width: 550px;
+    background-color: white;
+    height: 770px;
+    margin-top: 10px;
+ }
+ .toch {
+    padding-top: 20px;
+    width: 400px;
+    margin-right: auto;
+    margin-left: auto;
+ }
+ .progress-container {
+    display: flex;
+    align-items: center;/* Положення риски між текстом Shipping та Payment */
+    justify-content: center;
+  font-family: Arial, sans-serif;
+}
+.step {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #999;
+}
+
+.step .circle {/**/
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #ccc;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+}
+
+.step.active .circle {
+    background-color: #4CAF50; /* Green */
+}
+
+.step.completed .circle {
+    background-color: #4CAF50;
+    content: "✔️";
+    font-size: 16px;
+}
+
+.line {
+    flex: 1;
+    height: 2px;
+    background-color: #ccc;
+    margin: 0 8px;
+}
+
+.line.active {
+    background-color: #4CAF50;
+}
+ .center {
+    margin-top: 50px;
+    width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+ }
+form h2, form h3 {
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin-bottom: 15px;
+}
+.CVVandDate {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 70%;
+}
+.linetext {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 1px;
+    background-color: grey;
+}
+.myForm, .namecard {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 70%;
+}
+.typecard {
+    display: flex;
+    flex-direction: centr;
+    margin-bottom: 15px;
+    gap: 15px;
+    width: 140%;
+}
+.typecard .n1 {
+    width: 50%;
+}
+.typecard .n1 input{
+    width: 100%;
+}
+.typecard .n2 {
+    width: 45%;
+}
+.vidcart {
+    width: 40px;
+    height: 20px;
+}
+.month {
+    align-content: start;
+  width: 140px;
+  height: 30px;
+  font-size: 18px;
+  }
+.submit{
+    background-color: #4CAF50;
+    width: 150px;
+    height: 30px;
+    border-radius: 10%;
+    border-color: #4CAF50;
+    font-style: white;
+}
+.poruch {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.form-gr1 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    margin-right: 5px;
+    width: 30%;
+}
+.form-gr2 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 35%;
+}
+.form-gr .zip {
+    display: flex;
+    flex-direction: column;
+}
+.form-gr .country {
+    display: flex;
+    flex-direction: column;
+}
+.month label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+select:focus{
+    outline: none; /* Убираем стандартное обрамление */
+    border: 2px solid #4CAF50; /* Добавляем рамку синего цвета */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Опционально - добавляем легкую тень */
+      border-radius: 90%;
+}
+input:focus, textarea:focus {
+    outline: none; /* Убираем стандартное обрамление */
+    border: 2px solid #4CAF50; /* Добавляем рамку синего цвета */
+    border-radius: 5%;
+}
+select {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+button h4 {
+    color: white;
+    margin-top: 5px;
+}
